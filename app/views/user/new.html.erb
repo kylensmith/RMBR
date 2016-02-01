@@ -1,2 +1,24 @@
 <h1>User#new</h1>
 <p>Find me in app/views/user/new.html.erb</p>
+
+<%= form_for @user do |f| %>   
+			<%=f.label :First_Name %>   
+			<%=f.text_field :fname %> 
+			<br><br>
+			<%=f.label :Last_name %>   
+			<%=f.text_field :lname %>  
+			<br><br>
+			<%=f.label :email %>   
+			<%=f.email_field :email %>  
+			<br><br>
+			<%=f.label :password %>   
+			<%=f.password_field :password %>  
+			<br><br>
+			<%=f.label :city %>   
+			<%=f.text_field :city %> 
+			<br><br>
+			<%=f.label :state %>   
+			<%=f.select :state, options_for_select(us_states) %>  
+			<br><br> 
+			<div class="button"><%=f.submit :create %></div>
+			<% end %>
