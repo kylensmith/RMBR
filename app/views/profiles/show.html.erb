@@ -1,2 +1,45 @@
 <h1>Profile#show</h1>
 <p>Find me in app/views/profile/show.html.erb</p>
+
+
+<!-- Testing to see if the various data will display -->
+first name <%= @fname %>
+
+<br>
+
+last name <%= @lname %>
+<br>
+bio <%= @bio %>
+<br>
+hometown_city <%= @hometown_city %>
+<br>
+hometown_state <%= @hometown_state %>
+<br>
+cureent_city<%= @current_city%>
+<br>
+Current_state <%= @current_state %>
+<br>
+memebr_since <%= @member_since %>
+<br>
+
+
+THIS USER IS SESSION <%=@session%>
+
+<br><br><br><br>
+
+THIS USER IS SESSION <%if current_user = @session%> Logged in<%end%>
+<br><br><br><br>
+
+<%=current_user%>
+<br><br><br><br>
+
+<!-- Check if the user accessing the page is the pageowner -->
+<% if verify %>
+  <div>This is your account, <%=@fname%></div>
+  <%else%>
+  This is not your account.
+<% end %>
+
+<%= link_to("Sign-out", destroy_user_session_path, method: :delete)%>
+
+

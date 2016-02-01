@@ -12,5 +12,7 @@ Event.create(event_name: "Wedding Expo", event_location: "Meeting Space", event_
 
 EventUser.create(user_id: 1, event_id: 1)
 
-User.create(email_contact: "kns@kns", password: "123")
-Profile.create(user_id: 1, fname: "KN", lname: "Smith")
+User.create(password: "Starbucks57", avatar: "demo.jpg", email: "kns@gmail.com")
+Profile.create(user_id: 1, fname: "KN", lname: "Smith", bio: "Photography hobbyist", hometown_city: "Coos Bay", hometown_state: "Oregon", current_city: "Philadelphia", current_state: "PA")
+
+

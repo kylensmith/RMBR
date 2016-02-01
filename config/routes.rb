@@ -24,13 +24,17 @@ Rails.application.routes.draw do
   get 'user/index'
 
   get 'user/show'
+  get '/follow_event/:id' => 'events#follow', as: :follow_event
 
   devise_for :users
+
+  resources :profiles, :flashes, :users, :snaps, :events, :comments, :assets
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'profiles#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

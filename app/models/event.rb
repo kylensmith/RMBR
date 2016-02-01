@@ -1,6 +1,10 @@
 class Event < ActiveRecord::Base
-	belongs_to :user
-	belongs_to :user
+	has_many :users, through: :event_users
+	has_many :event_users
+
+	has_many :following_users, through: :event_followers, source: :user
+	has_many :event_followers
+
 	has_many :assets
 
 end

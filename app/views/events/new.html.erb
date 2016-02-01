@@ -1,2 +1,36 @@
 <h1>Event#new</h1>
 <p>Find me in app/views/event/new.html.erb</p>
+
+
+<%= form_for @events do |f| %>   
+			<%=f.label :Event_Name %>   
+			<%=f.text_field :event_name %> 
+			<br><br>
+			<%=f.label :Event_Description%>   
+			<%=f.text_field :event_description %>  
+			<br><br>
+			<%=f.label :Event_Location %>   
+			<%=f.text_field :event_location %>  
+			<br><br>
+			
+			<%=f.label :Event_City%>   
+			<%=f.text_field :event_city %>  
+			<br><br>
+			<%=f.label :event_state %>   
+			<%=f.select :event_state, options_for_select(us_states) %>   
+			<br><br>
+			upload logo
+			<br><br>
+			<%=f.label :Start_Date %>   
+			<%=f.date_select :event_start_date %> 
+			<br><br>
+			<%=f.label :End_Date %>   
+			<%=f.date_select :event_end_date %> 
+			<br><br>
+			<%=f.label :event_status %>   
+			<%=f.select :event_status, options_for_select(event_privacy) %> 
+			<br><br>
+			
+			<br><br> 
+			<div class="button"><%=f.submit :create %></div>
+			<% end %>

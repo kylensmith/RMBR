@@ -1,2 +1,0 @@
-class SnapController < ApplicationController
-end

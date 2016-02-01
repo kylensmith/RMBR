@@ -1,6 +1,6 @@
-class CreateHearts < ActiveRecord::Migration
+class CreateFlashes < ActiveRecord::Migration
   def change
-    create_table :hearts do |t|
+    create_table :flashes do |t|
     	t.integer :asset_id
     	t.integer :user_id
 
