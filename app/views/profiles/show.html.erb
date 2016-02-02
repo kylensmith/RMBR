@@ -42,4 +42,7 @@ THIS USER IS SESSION <%if current_user = @session%> Logged in<%end%>
 
 <%= link_to("Sign-out", destroy_user_session_path, method: :delete)%>
 
+<br>
+
+<%=link_to "update user information", edit_user_path(@profile.user.id) %>
 

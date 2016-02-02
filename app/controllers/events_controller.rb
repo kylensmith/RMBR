@@ -24,8 +24,7 @@ def create
   def follow
   	@e = Event.find_by_id(params[:id])
   	if @e
-  		puts "ADDING #{@e.inspect} TO #{current_user.event_followers.inspect} "
-	  	current_user.followed_events << @e
+  		current_user.followed_events << @e
 	 end
   	redirect_to events_path, notice: "cool"
   end
@@ -41,9 +40,6 @@ def create
   	else
   		@length = @f.to_i
   	end
-
-  	# @event_title = Event.find_by_id(params[:id]).event_title
-
   end
 
 private
