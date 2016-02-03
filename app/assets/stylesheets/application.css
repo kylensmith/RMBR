@@ -16,6 +16,8 @@
  *= require_self
  */
 
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,300);
+
 html {
 background: rgba(255,255,255,1);
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 2%, rgba(255,255,255,1) 7%, rgba(251,253,254,1) 44%, rgba(202,221,241,1) 100%);

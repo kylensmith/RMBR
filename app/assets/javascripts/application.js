@@ -73,6 +73,15 @@ $(function () {
         width: 6,
         float:true
     };
+    $('.usernew').gridstack(options);
+
+    options = {
+        cell_height: 170,
+        vertical_margin: 10,
+        animate: true,
+        width: 6,
+        float:true
+    };
     $('.profile_body').gridstack(options);
 
     options = {
@@ -85,6 +94,15 @@ $(function () {
     $('.profile_follow_head').gridstack(options);
 
     options = {
+        cell_height: 50,
+        vertical_margin: 10,
+        animate: true,
+        width: 6,
+        float:true
+    };
+    $('.profile_follow_head2').gridstack(options);
+
+    options = {
         cell_height: 85,
         vertical_margin: 10,
         animate: true,
@@ -92,6 +110,15 @@ $(function () {
         float:true
     };
     $('.profile_follow_body').gridstack(options);
+
+    options = {
+        cell_height: 55,
+        vertical_margin: 10,
+        animate: true,
+        width: 6,
+        float:true
+    };
+    $('.profile_follow_body2').gridstack(options);
 });
 
 $(document).ready (function(){

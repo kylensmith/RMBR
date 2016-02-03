@@ -1,3 +1,175 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.portbox {
+	width: 95%;
+	height: 95%;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	display: inline-block;
+}
+.portavatar {
+	width: 120px;
+	height: 150px;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	background-color:#32b5ff;
+	float: left;
+}
+.portbody {
+	width: 70%;
+	height: 90%;
+	margin-top: 2.5%;
+	margin-left: 8%;
+	float: left;
+	line-height: 2.4em;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 1em;
+}
+.porteditbody {
+	width: 70%;
+	height: 90%;
+	margin-top: 2.5%;
+	margin-left: 8%;
+	float: left;
+	line-height: 2.4em;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 1em;
+}
+.portdisplay {
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1.2em;
+	color:#32b5ff;
+	display: inline;
+}
+.update_user {
+	position: relative;
+	width: 150px;
+	height: 30px;
+	background-color:#32b5ff;
+	display:inline;
+	padding: 10px 20px 10px 20px;
+	margin-left: 20px;
+	justify-content:center;
+	align-items:center;
+}
+.update_user a{
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+}
+.subbutton {
+	position: relative;
+	width: 150px;
+	height: 30px;
+	background-color:#32b5ff;
+	display:inline;
+	padding: 5px 20px 10px 20px;
+	margin-left: 80px;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+	border: none;
+}
+.phform{
+	color:#7fedffff;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 0.8em;
+	margin-bottom: 20px;
+	height:20px; 
+    width:220px; 
+    padding:5px 8px;
+}
+
+
+// update portrait
+
+.ud_portbox {
+	width: 95%;
+	height: 95%;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	display: inline-block;
+}
+.ud_portavatar {
+	width: 120px;
+	height: 150px;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	background-color:#32b5ff;
+	float: left;
+	justify-content:center;
+	align-items:center;
+}
+.ud_portbody {
+	width: 70%;
+	height: 90%;
+	margin-top: 2.5%;
+	margin-left: 8%;
+	float: left;
+	line-height: 2.4em;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 1em;
+}
+
+.bio-label {
+	// margin-bottom: 140px;
+	display: inline-block;
+	// margin-top: -70px;
+	// height: 50%;
+	// top: 0px;
+}
+.upform{
+	color:#7fedffff;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 0.8em;
+	margin-bottom: 10px;
+    padding:5px 8px;
+}
+.up_state{
+	margin-bottom: 80px;
+    padding:5px 8px;
+}
+.upform_bio{
+	color:#7fedffff;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 0.8em;
+	margin-top: -30px;
+	margin-left: 40px;
+    padding:5px 8px;
+}
+.up_subbutton {
+	position: relative;
+	width: 150px;
+	height: 30px;
+	background-color:#32b5ff;
+	display:inline;
+	padding: 5px 20px 10px 20px;
+	margin-left: 80px;
+	margin-top: 30px;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+	border: none;
+}
+
+
