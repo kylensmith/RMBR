@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  devise_scope :user do
+  get "sign_in", to: "devise/sessions#new"
+end
+# devise_scope :user do
+#   get "users/edit", to: "devise/passwords#edit"
+# end
+
+
+Rails.application.routes.draw do
+      devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
+    end
+
+
   get 'profile/create'
 
   get 'profile/new'
@@ -26,7 +41,7 @@ Rails.application.routes.draw do
   get 'user/show'
   get '/follow_event/:id' => 'events#follow', as: :follow_event
 
-  devise_for :users
+  # devise_for :users
 
   resources :profiles, :flashes, :users, :snaps, :events, :comments, :assets
   
@@ -35,6 +50,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'profiles#index'
+
+
+   
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

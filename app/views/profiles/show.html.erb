@@ -27,7 +27,7 @@ THIS USER IS SESSION <%=@session%>
 
 <br><br><br><br>
 
-THIS USER IS SESSION <%if current_user = @session%> Logged in<%end%>
+THIS USER IS SESSION <%if current_user = @session%> <%= link_to "Settings", edit_user_path(current_user) %><%end%>
 <br><br><br><br>
 
 <%=current_user%>
@@ -45,4 +45,8 @@ THIS USER IS SESSION <%if current_user = @session%> Logged in<%end%>
 <br>
 
 <%=link_to "update user information", edit_user_path(@profile.user.id) %>
+
+<br>
+<br>
+<%=link_to "update profile information", edit_profile_path(@profile.id) %>
 

@@ -1,17 +1,43 @@
-<h1>Profile#index</h1>
+<h1>Profile#edit</h1>
 <p>Find me in app/views/profile/index.html.erb</p>
 
  
 
 
 
-<% User.all.each do |w|%> 
-			<%if w.profile%>
-			<%=link_to w.email, profile_path(w.profile.id) %>
-
+<%= form_for @profile do |f| %>   
+			<%=f.label :First_Name %>   
+			<%=f.text_field :fname %> 
 			<br><br>
+			<%=f.label :Last_Name%>   
+			<%=f.text_field :lname %>  
+			<br><br>
+			<%=f.label :Bio %>   
+			<%=f.text_field :bio %>  
+			<br><br>
+			
+			<%=f.label :Hometown_City%>   
+			<%=f.text_field :hometown_city %>  
+			<br><br>
+			<%=f.label :Hometown_state %>   
+			<%=f.select :hometown_state, options_for_select(us_states) %>   
+			<br><br>
+			<%=f.label :Current_City%>   
+			<%=f.text_field :current_city %>  
+			<br><br>
+			<%=f.label :Current_state %>   
+			<%=f.select :current_state, options_for_select(us_states) %>   
+			<br><br>
+			<%=f.label :Avatar %> 
+	<%= f.file_field :avatar %>
+	
+		
+			
+			<br><br> 
+			<div class="button"><%=f.submit :update %></div>
+			<% end %>
 
-			<%end%><%end%>
+			<%= image_tag @profile.avatar.url%>
+			<br><br> 
 
-
-			test 
+			<%= link_to "Change your password", edit_user_password_path %>

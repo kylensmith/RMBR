@@ -10,6 +10,7 @@ class CreateProfiles < ActiveRecord::Migration
     	t.string :current_city
     	t.string :current_state
     	t.date :date
+      t.string :avatar
 
       t.timestamps null: false
     end

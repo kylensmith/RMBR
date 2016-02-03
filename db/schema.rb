@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160201152501) do
     t.string   "current_city"
     t.string   "current_state"
     t.date     "date"
+    t.string   "avatar"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
