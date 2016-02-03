@@ -73,7 +73,7 @@ border-top-right-radius: 10px;" >
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="3" data-gs-height="2">
             <div class="grid-stack-item-content" style = "background-color:white">
                 <div class="portbox">
-                    <div class="portavatar"></div>
+                    <div class="portavatar"><%= image_tag @profile.avatar.url%></div>
                     <div class="portbody">
                         First Name : <div class="portdisplay"> <%= @fname %> </div>
                         <br>

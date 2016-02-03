@@ -49,11 +49,11 @@ border-top-right-radius: 10px;" >
 </div>
 
 <!-- profile header -->
-<div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
-   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
+<div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:510px; margin-bottom:10px" >
+   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="1" data-gs-height="1">
             <div class="grid-stack-item-content" style = "background-color:#32b5ff">my photos</div>
     </div>
-    <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="2" data-gs-height="1">
+    <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="1" data-gs-height="1">
             <div class="grid-stack-item-content" style = "background-color:#32b5ff">my events</div>
     </div>
     <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="1" data-gs-height="1">
@@ -64,33 +64,6 @@ border-top-right-radius: 10px;" >
     </div>
 </div>
 
-<!-- profile -->
-<div class="grid-stack grid-stack-static grid-stack-6 profile_body" style = "height:340px; margin-bottom:10px" >
-   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="3" data-gs-height="2">
-            <div class="grid-stack-item-content" style = "background-color:white">
-                <div class="portbox">
-                    <div class="portavatar"></div>
-                    <div class="porteditbody">
-                        <%= form_for @user do |f| %>   
-						<%=f.label :email %>   
-						<%=f.text_field :email, :class => 'phform' %> 
-						<br>
-						<%=f.label :Password %>   
-						<%=f.password_field :password, :class => 'phform' %>
-						<br>
-						<%=f.label :birthday %>   
-						<%=f.date_field :birthday, :class => 'phform' %>  
-						<br>  
-						<%=f.submit :update, :class => 'subbutton' %>
-						<% end %>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="grid-stack-item" data-gs-x="3" data-gs-y="0" data-gs-width="3" data-gs-height="2">
-            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my settings</div>
-    </div>
-</div>
 
 <!-- following header -->
 <div class="grid-stack grid-stack-static grid-stack-6 profile_follow_head" style = "height:50px; margin-bottom:10px" >
