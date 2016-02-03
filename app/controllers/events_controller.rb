@@ -30,6 +30,10 @@ def create
   end
 
   def show
+  	if current_user
+  		@id = current_user.id
+  	end
+  	@picture = Picture.new
   	@event = Event.find_by_id(params[:id])
   	@start = Event.find_by_id(params[:id]).event_start_date
   	@end = Event.find_by_id(params[:id]).event_end_date
@@ -42,20 +46,10 @@ def create
   	end
   end
 
-# This is for the media
-def create_media
-	@asset = Asset.new(asset_params, event_id: params[:id], user_id: current_user.id)
-	@asset.save
 
-end
 
 
 private
-# This is for the media
-def asset_params
-    params.require(:asset).permit(:media_name, :description)
-  end
-
 
 def strong_form
     params.require(:event).permit(:event_name, :event_location, :event_city, :event_state, :event_description, :event_start_date, :event_end_date, :logo, :event_status)

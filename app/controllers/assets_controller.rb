@@ -1,7 +1,8 @@
 class AssetsController < ApplicationController
 
 def create
-	@asset = Asset.new(asset_params, event_id: params[:id], user_id: current_user.id)
+	puts "******&&&&&******&&&&*******"
+	@asset = Asset.new(asset_params, event_id: params[:id], user_id: current_user.id )
 	@asset.save
 
 end

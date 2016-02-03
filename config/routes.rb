@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   # devise_for :users
 
-  resources :profiles, :flashes, :users, :snaps, :events, :comments, :assets
+  resources :profiles, :flashes, :users, :snaps, :events, :comments, :pictures
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
