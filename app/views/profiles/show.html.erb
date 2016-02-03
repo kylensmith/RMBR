@@ -1,7 +1,7 @@
-<h1>Profile#show</h1>
+<!-- <h1>Profile#show</h1>
 <p>Find me in app/views/profile/show.html.erb</p>
 
-
+ -->
 <!-- user profile page -->
 
 <!-- header -->
@@ -71,7 +71,27 @@ border-top-right-radius: 10px;" >
 <!-- profile -->
 <div class="grid-stack grid-stack-static grid-stack-6 profile_body" style = "height:340px; margin-bottom:10px" >
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="3" data-gs-height="2">
-            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my portrait / my login</div>
+            <div class="grid-stack-item-content" style = "background-color:white">
+                <div class="portbox">
+                    <div class="portavatar"><%= image_tag @profile.avatar.url%></div>
+                    <div class="portbody">
+                        First Name : <div class="portdisplay"> <%= @fname %> </div>
+                        <br>
+                        Last Name : <div class="portdisplay"> <%= @lname %> </div>
+                        <br>
+                        About Me : <div class="portdisplay"> <%= @bio %></div>
+                        <br>
+                        My Hometown &amp; State : <div class="portdisplay"> <%= @hometown_city %></div> <div class="portdisplay"> <%= @hometown_state %></div>
+                        <br>
+                        My Current City &amp; State : <div class="portdisplay"> <%= @current_city%></div> <div class="portdisplay"> <%= @current_state %></div>
+                        <br>
+                        Member Since : <div class="portdisplay"> <%= @member_since %></div>
+                        <br>
+                        <div class="update_user"><%=link_to "update login", edit_user_path(@profile.user.id) %></div>
+                        <div class="update_user"><%=link_to "update portrait", edit_profile_path(@profile.id) %></div>
+                    </div>
+                </div>
+            </div>
     </div>
     <div class="grid-stack-item" data-gs-x="3" data-gs-y="0" data-gs-width="3" data-gs-height="2">
             <div class="grid-stack-item-content" style = "background-color:#32b5ff">my settings</div>
@@ -106,24 +126,6 @@ border-top-right-radius: 10px;" >
 
 
 <!-- Testing to see if the various data will display -->
-first name <%= @fname %>
-
-<br>
-
-last name <%= @lname %>
-<br>
-bio <%= @bio %>
-<br>
-hometown_city <%= @hometown_city %>
-<br>
-hometown_state <%= @hometown_state %>
-<br>
-cureent_city<%= @current_city%>
-<br>
-Current_state <%= @current_state %>
-<br>
-memebr_since <%= @member_since %>
-<br>
 
 
 THIS USER IS SESSION <%=@session%>
@@ -144,12 +146,4 @@ THIS USER IS SESSION <%if current_user = @session%> <%= link_to "Settings", edit
 <% end %>
 
 <%= link_to("Sign-out", destroy_user_session_path, method: :delete)%>
-
-<br>
-
-<%=link_to "update user information", edit_user_path(@profile.user.id) %>
-
-<br>
-<br>
-<%=link_to "update profile information", edit_profile_path(@profile.id) %>
-
+<br><br><br><br><br><br><br><br>
