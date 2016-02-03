@@ -20,3 +20,12 @@ State: <%= @event.event_state %>
 
 
 <%=link_to "follow event", follow_event_path(@event) %>
+
+
+<%= form_for @event do |f| %>   
+			<br><br>
+			<%=f.label :Media_Name %> 
+	<%= f.file_field :media_name %>
+			<br><br> 
+			<div class="button"><%=f.submit :create_media %></div>
+			<% end %>
