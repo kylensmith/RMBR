@@ -40,6 +40,14 @@ $(function () {
     $('.top').gridstack(options);
 
     options = {
+        cell_height: 90,
+        animate: true,
+        width: 6,
+        float:true
+    };
+    $('.bott').gridstack(options);
+
+    options = {
         cell_height: 170,
         vertical_margin: 10,
     	resizable: { handles: 'se, sw' },
@@ -48,6 +56,42 @@ $(function () {
         float:true
     };
     $('.second').gridstack(options);
+
+    options = {
+        cell_height: 170,
+        vertical_margin: 10,
+        animate: true,
+        width: 6,
+        float:true
+    };
+    $('.profile_head').gridstack(options);
+
+    options = {
+        cell_height: 170,
+        vertical_margin: 10,
+        animate: true,
+        width: 6,
+        float:true
+    };
+    $('.profile_body').gridstack(options);
+
+    options = {
+        cell_height: 50,
+        vertical_margin: 10,
+        animate: true,
+        width: 6,
+        float:true
+    };
+    $('.profile_follow_head').gridstack(options);
+
+    options = {
+        cell_height: 85,
+        vertical_margin: 10,
+        animate: true,
+        width: 12,
+        float:true
+    };
+    $('.profile_follow_body').gridstack(options);
 });
 
 $(document).ready (function(){
