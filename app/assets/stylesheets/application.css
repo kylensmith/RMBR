@@ -10,6 +10,84 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require gridstack-js-rails
+ *= require gridstack/gridstack-extra
  *= require_tree .
  *= require_self
  */
+
+body {
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 2%, rgba(255,255,255,1) 7%, rgba(251,253,254,1) 44%, rgba(202,221,241,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(2%, rgba(255,255,255,1)), color-stop(7%, rgba(255,255,255,1)), color-stop(44%, rgba(251,253,254,1)), color-stop(100%, rgba(202,221,241,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 2%, rgba(255,255,255,1) 7%, rgba(251,253,254,1) 44%, rgba(202,221,241,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 2%, rgba(255,255,255,1) 7%, rgba(251,253,254,1) 44%, rgba(202,221,241,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 2%, rgba(255,255,255,1) 7%, rgba(251,253,254,1) 44%, rgba(202,221,241,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 2%, rgba(255,255,255,1) 7%, rgba(251,253,254,1) 44%, rgba(202,221,241,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#caddf1', GradientType=0 );
+}
+
+ .grid-stack-item-content {
+ 	left: 5px !important;
+ 	right: 5px !important;
+ }
+ .grid-stack-item-content {
+	background-size: cover;
+	repeat: no-repeat;
+ }
+ .main_etitle, .etitle {
+ 	display:block;
+ 	color: rgb(24,24,26);
+ 	float: right;
+ 	margin-top: 150px;
+ 	margin-right: 50px;
+ 	width: 150px;
+ 	height: 50px;
+ 	padding: 10px;
+ 	font-size: 1.2em;
+ 	background-color: rgba(255,255,255,0.8);
+ }
+ .etitle {
+ 	display:none;
+ }
+.main_elocdate, .elocdate {
+ 	display:block;
+ 	color: rgb(255,255,255);
+ 	margin-top: 10px;
+ 	margin-left: 10px;
+ 	width: 150px;
+ 	height: 50px;
+ 	padding: 10px;
+ 	font-size: 1em;
+ 	line-height: 1.8em;
+ }
+ .elocdate {
+ 	display:none;
+ }
+ .clear {
+ 	clear: both;
+ }
+ .lt_home {
+ 	width: 50%;
+ 	height:50%;
+ 	margin-top: 60px;
+ 	margin-left: 100px;
+ 	background-size: cover;
+	repeat: no-repeat;
+ }
+ .lg_top {
+ 	width: 90px;
+ 	height:90px;
+ 	margin-top: 20px;
+ 	margin-left:auto;
+ 	margin-right:auto;
+ 	background-size: cover;
+	repeat: no-repeat;
+ }
+
+
+
+
+
+
+
