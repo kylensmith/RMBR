@@ -1,0 +1,9 @@
+class Picture < ActiveRecord::Base
+	has_one :event
+	has_many :comments
+	has_one :user
+	has_many :user, through: :snap
+	has_many :user, through: :flashes
+	has_many :user, through: :comments
+	mount_uploader :picture_file, AvatarUploader
+end

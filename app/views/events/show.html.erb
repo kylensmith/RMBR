@@ -17,10 +17,28 @@ City: <%= @event.event_city %>
 <br>
 State: <%= @event.event_state %> 
 <br>
-<%= @event_title %> 
-<br>
-<%= @event_title %> 
-<br>
 
 
 <%=link_to "follow event", follow_event_path(@event) %>
+
+event id: <%=@event.id %>
+<br>
+<% if current_user %>
+
+
+
+
+	<%= form_for @picture, :url => { :controller => "pictures", :action => "create" }, :html => {:method => :post} do |f| %>  
+	<br><br>
+	<%=f.label :Picture_file %> 
+	<%=f.file_field :picture_file %>
+	<%=f.hidden_field :event_id, :value => @event.id%>
+	<%=f.hidden_field :user_id, :value => @id%>
+	<br><br> 
+	<div class="button"><%=f.submit :create %></div>
+	<% end %>
+
+
+
+
+<% end %>

@@ -30,6 +30,10 @@ def create
   end
 
   def show
+  	if current_user
+  		@id = current_user.id
+  	end
+  	@picture = Picture.new
   	@event = Event.find_by_id(params[:id])
   	@start = Event.find_by_id(params[:id]).event_start_date
   	@end = Event.find_by_id(params[:id]).event_end_date
@@ -41,6 +45,9 @@ def create
   		@length = @f.to_i
   	end
   end
+
+
+
 
 private
 
