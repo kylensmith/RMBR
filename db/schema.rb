@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160203153354) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "event_id"
+    t.integer  "picture_id"
     t.integer  "user_id"
     t.text     "comment_text"
     t.datetime "created_at",   null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160203153354) do
   create_table "event_users", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "event_id"
+    t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,10 +61,11 @@ ActiveRecord::Schema.define(version: 20160203153354) do
   end
 
   create_table "flashes", force: :cascade do |t|
-    t.integer  "asset_id"
+    t.integer  "picture_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "flash_status"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -91,15 +93,17 @@ ActiveRecord::Schema.define(version: 20160203153354) do
   end
 
   create_table "snaps", force: :cascade do |t|
-    t.integer  "asset_id"
+    t.integer  "picture_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "snap_status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "user_followers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "user_being_followed_id"
+    t.integer  "follow_status"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

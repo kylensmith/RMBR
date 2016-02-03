@@ -1,0 +1,20 @@
+<h1>Picture#index</h1>
+<p>Find me in app/views/profile/index.html.erb</p>
+
+ 
+
+
+
+			
+			<% Picture.all.each do |w|%> 
+
+		<!-- This is the code for making an image a link to the picture show page with the proper ID -->
+			<%= link_to (image_tag(w.picture_file.url)), picture_path(w.id)%>
+			
+
+			<br><br>
+
+			<%end%>
+
+
+			 

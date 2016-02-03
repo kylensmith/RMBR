@@ -1,0 +1,66 @@
+<h1>Picture#show</h1>
+<p>Find me in app/views/profile/index.html.erb</p>
+
+<!-- Displays the event the picture is from -->
+Event <%= link_to pic_event.event_name, event_path(pic_event)%> 
+<br>
+<!-- Displays the person that posted the image -->
+<%= link_to pic_profile.fname, profile_path(pic_profile)%>
+ <%=@picture.created_at.strftime("%b %d, %Y (%l:%M %P)")%> 
+ 
+
+<!-- This is for flash liking pictures -->
+<%= form_for @flash, :url => { :controller => "flashes", :action => "create" }, :html => {:method => :post} do |f| %>  
+	<br><br>
+	<%=f.hidden_field :picture_id, :value => @picture.id%>
+	<%=f.hidden_field :user_id, :value => @id%>
+	<br><br> 
+	<div class="button"><%=f.submit :flash %></div>
+	<% end %> <%= flash_count%>
+
+
+<!-- This is for snap resharing pictures -->
+<%= form_for @snap, :url => { :controller => "snaps", :action => "create" }, :html => {:method => :post} do |f| %>  
+	<br><br>
+	<%=f.hidden_field :picture_id, :value => @picture.id%>
+	<%=f.hidden_field :user_id, :value => @id%>
+	<br><br> 
+	<div class="button"><%=f.submit :snap %></div>
+	<% end %> <%= snap_count(@picture.id) %>
+
+
+
+
+<!-- Displays the image for the show box id -->
+<%=image_tag(@picture.picture_file.url)%>
+
+
+<!-- Needs to be hidden if not logged in -->
+
+<%= form_for @comment, :url => { :controller => "comments", :action => "create" }, :html => {:method => :post} do |f| %>  
+	<br><br>
+	<%=f.hidden_field :picture_id, :value => @picture.id%>
+	<%=f.hidden_field :user_id, :value => @id%>
+	<%=f.text_area :comment_text%>
+	<br><br> 
+	<div class="button"><%=f.submit :comment %></div>
+	<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
