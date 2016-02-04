@@ -148,6 +148,10 @@ $(document).ready(function(){
         $('.lightbox-inner').html('<div class="close">close</div>');
         $('.lightbox-outer').hide();
     });
+    $(".lightbox-outer").on("click", function(){
+        $('.lightbox-inner').html('<div class="close">close</div>');
+        $('.lightbox-outer').hide();
+    });
   });
 
 $(document).ready(function(){
