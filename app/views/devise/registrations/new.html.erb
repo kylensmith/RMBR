@@ -27,3 +27,76 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<div class="grid-stack grid-stack-static grid-stack-6 top" style = "height:110px; margin-bottom:10px; z-index: 9999; background-color: rgba(255,255,255, 0.9);" >
+
+    <div class="grid-stack-item" 
+        data-gs-x="0" data-gs-y="0" 
+        data-gs-width="1" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="1" data-gs-y="0" 
+        data-gs-width="4" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content">
+                <div class="lg_top" style = "background-image: url(<%=asset_path 'logo.svg' %>)"></div>
+            </div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="6" data-gs-y="0" 
+        data-gs-width="1" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content"></div>
+    </div>
+
+</div>
+<div class="grid-stack grid-stack-static grid-stack-6 main" style = "height:340px" >
+    <div class="grid-stack-item"
+        data-gs-x="0" data-gs-y="0" 
+        data-gs-width="3" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-image: url(<%=asset_path 'phototest.jpg' %>)"><div class="main_elocdate">event location<br>event date</div><div class="main_etitle">event title here</div><div class="clear"></div></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="3" data-gs-y="0" 
+        data-gs-width="2" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="5" data-gs-y="0" 
+        data-gs-width="1" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="3" data-gs-y="1" 
+        data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="4" data-gs-y="1" 
+        data-gs-width="2" data-gs-height="1">
+            <div class="grid-stack-item-content">
+                <div class="lt_home" style = "background-image: url(<%=asset_path 'type_blue_ol.svg' %>)"></div>
+            </div>
+    </div>
+</div>
+
+
+<div class="grid-stack grid-stack-6 second" style = "margin-top:10px" >
+    <div class="grid-stack-item" data-gs-max-width="3" data-gs-max-height="2" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:orange; background-image: url(<%=asset_path 'phototest.jpg' %>)" ><div class="elocdate">event location<br>event date</div><div class="etitle">event title here</div><div class="clear"></div></div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="1" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:orange;background-image: url(<%=asset_path 'phototest.jpg' %>) "></div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:yellow;background-image: url(<%=asset_path 'phototest.jpg' %>)"></div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="3" data-gs-y="0" data-gs-width="1" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-color:orange;background-image: url(<%=asset_path 'phototest.jpg' %>)"></div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:yellow;background-image: url(<%=asset_path 'phototest.jpg' %>)"></div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="5" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:orange;background-image: url(<%=asset_path 'phototest.jpg' %>)"></div>
+    </div>
+</div>

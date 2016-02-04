@@ -3,54 +3,8 @@
 
  -->
 <!-- user profile page -->
-
-<!-- header -->
-<div class="grid-stack grid-stack-static grid-stack-6 top" style = "height:110px; margin-bottom:10px; z-index: 9999; background-color: rgba(255,255,255, 0.9);" >
-
-    <div class="grid-stack-item" 
-        data-gs-x="0" data-gs-y="0" 
-        data-gs-width="1" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content"></div>
-    </div>
-    <div class="grid-stack-item" 
-        data-gs-x="1" data-gs-y="0" 
-        data-gs-width="4" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content">
-                <div class="lg_top" style = "background-image: url(<%=asset_path 'logo.svg' %>)"></div>
-            </div>
-    </div>
-    <div class="grid-stack-item" 
-        data-gs-x="6" data-gs-y="0" 
-        data-gs-width="1" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content"></div>
-    </div>
-
-</div>
-
-<!-- bottom -->
-<div class="grid-stack grid-stack-static grid-stack-6 bott" style = "height:100px; width: 95%; margin-left: 2.5%; position:fixed; bottom:0px; left:0px; right:0px; margin-bottom:0px; z-index: 9998; background-color: rgba(255,255,255, 0.9);-moz-border-radius-topleft: 10px;
--webkit-border-top-left-radius: 10px;
- border-top-left-radius: 10px;
--moz-border-radius-topright: 10px;
--webkit-border-top-right-radius: 10px;
-border-top-right-radius: 10px;" >
-
-    <div class="grid-stack-item" 
-        data-gs-x="0" data-gs-y="0" 
-        data-gs-width="2" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content">
-            	<div class="txt_bott" style = "background-image: url(<%=asset_path 'type_blue_ol.svg' %>)"></div>
-            </div>
-    </div>
-    <div class="grid-stack-item" 
-        data-gs-x="2" data-gs-y="0" 
-        data-gs-width="2" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content">
-                <div>the latest the greatest the hottest</div>
-            </div>
-    </div>
-
-</div>
+<% if verify %>
+  <div>This is your account, <%=@fname%></div>
 
 <!-- profile header -->
 <div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
@@ -124,47 +78,84 @@ border-top-right-radius: 10px;" >
 <!-- This is the divide between the two works... -->
 
 
-
-<!-- Testing to see if the various data will display -->
-
-
-THIS USER IS SESSION <%=@session%>
-
-<br><br><br><br>
-
-THIS USER IS SESSION <%if current_user = @session%> <%= link_to "Settings", edit_user_path(current_user) %><%end%>
-<br><br><br><br>
-
-<%=current_user%>
-<br><br><br><br>
-
 <!-- Check if the user accessing the page is the pageowner -->
-<% if verify %>
-  <div>This is your account, <%=@fname%></div>
   <%else%>
-  This is not your account.
+<!--   This is not your account. -->
+
+<!-- profile header -->
+<div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
+   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my photos</div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="2" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my events</div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my snaps</div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="5" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my flashes</div>
+    </div>
+</div>
+
+<!-- profile -->
+<div class="grid-stack grid-stack-static grid-stack-6 profile_body" style = "height:340px; margin-bottom:10px" >
+   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="3" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-color:white">
+                <div class="portbox">
+                    <div class="portavatar"><%= image_tag @profile.avatar.url%></div>
+                    <div class="portbody">
+                        First Name : <div class="portdisplay"> <%= @fname %> </div>
+                        <br>
+                        Last Name : <div class="portdisplay"> <%= @lname %> </div>
+                        <br>
+                        About Me : <div class="portdisplay"> <%= @bio %></div>
+                        <br>
+                        My Hometown &amp; State : <div class="portdisplay"> <%= @hometown_city %></div> <div class="portdisplay"> <%= @hometown_state %></div>
+                        <br>
+                        My Current City &amp; State : <div class="portdisplay"> <%= @current_city%></div> <div class="portdisplay"> <%= @current_state %></div>
+                        <br>
+                        Member Since : <div class="portdisplay"> <%= @member_since %></div>
+                        <br>
+                        <div class="update_user"><%=link_to "update login", edit_user_path(@profile.user.id) %></div>
+                        <div class="update_user"><%=link_to "update portrait", edit_profile_path(@profile.id) %></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="3" data-gs-y="0" data-gs-width="3" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my settings</div>
+    </div>
+</div>
+
+<!-- following header -->
+<div class="grid-stack grid-stack-static grid-stack-6 profile_follow_head" style = "height:50px; margin-bottom:10px" >
+   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">who i follow and search</div>
+    </div>
+</div>
+
+<!-- following -->
+<div class="grid-stack grid-stack-static grid-stack-12 profile_follow_body" style = "height:85px; margin-bottom:10px" >
+   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">name</div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="12" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">name</div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="0" data-gs-y="1" data-gs-width="1" data-gs-height="1">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">name</div>
+    </div>
+</div>
+
+
 <% end %>
 
 <%= link_to("Sign-out", destroy_user_session_path, method: :delete)%>
 
+THIS USER IS SESSION <%=@session%>
+<br><br>
+THIS USER IS SESSION <%if current_user = @session%> <%= link_to "Settings", edit_user_path(current_user) %><%end%>
+<br><br>
 
-<br>
-
-<%=link_to "update user information", edit_user_path(@profile.user.id) %>
-
-
-<%=link_to "update profile information", edit_profile_path(@profile.id) %>
-
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br>
-
+<%=current_user%>

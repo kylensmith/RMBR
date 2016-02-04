@@ -1,3 +1,161 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.subox {
+	width: 90%;
+	height: 90%;
+	// margin-top: 2%;
+	margin-left: 5%;
+	display: inline-block;
+	line-height: 1.8em;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 0.8em;
+	color:#0019ff;
+	text-align: center;
+}
+.subox a {
+	text-decoration: none;
+}
+.subox h2 {
+	color:#32b5ff;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 1.8em;
+	text-align: center;
+}
+.sufield{
+	text-align: center;
+}
+.suform {
+	color:#3880ee;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 0.8em;
+	margin-bottom: 20px;
+	height:18px; 
+    width:140px; 
+    padding:5px 8px;
+}
+
+.su_subbutton {
+	// position: relative;
+	width: 80%;
+	height: 30px;
+	background-color:#32b5ff;
+	display:inline;
+	padding: 5px 20px 10px 20px;
+	margin-left: 1.8%;
+	// margin-top: 30px;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1.3em;
+	text-decoration: none;
+	border: none;
+}
+.update_user a{
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+}
+
+.eu_portbox {
+	width: 95%;
+	height: 95%;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	display: inline-block;
+}
+
+.eu_portbody {
+	width: 70%;
+	height: 90%;
+	// margin-top: 2.5%;
+	margin-left: 8%;
+	float: left;
+	line-height: 2.4em;
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 1em;
+}
+.eu_portbox h2 {
+	color:#32b5ff;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 1.4em;
+	text-align: center;
+	margin-top: -2%;
+}
+.eu_portbox h3 {
+	color:#2a9fe1;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 1.2em;
+	text-align: center;
+	margin-top: 6%;
+}
+.eu_portbody h4 a{
+	color:#a1daee;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 1em;
+	text-align: center;
+	margin-top: 6%;
+	text-decoration:none;
+}
+
+.euform {
+	color:#3880ee;
+	font-family: Quicksand;
+	font-weight: 300;
+	font-size: 0.8em;
+	margin-bottom: 10px;
+	height:15px; 
+    width:200px; 
+    padding:5px 8px;
+}
+.eu_upbutton {
+	// position: relative;
+	width: 260px;
+	height: 40px;
+	background-color:#32b5ff;
+	display:inline;
+	padding: 10px 20px 10px 20px;
+	margin-left: 20%;
+	margin-top: 10px;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+	border: none;
+}
+
+.eu_cancbutton {
+	// position: relative;
+	width: 260px;
+	height: 40px;
+	background-color:#32b5ff;
+	display:inline;
+	padding: 10px 20px 10px 20px;
+	margin-left: 20%;
+	// margin-top: 30px;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-family: Quicksand;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+	border: none;
+}
+
