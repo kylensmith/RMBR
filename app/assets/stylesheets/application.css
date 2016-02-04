@@ -150,17 +150,23 @@ body {
 }
 
 .lightbox-inner{
-	width:400px;
-	height: 500px;
+	width:600px;
+	height: 600px;
 	margin: 0 auto;
 	background-color: rgba(255,255,255,0.5);
+	overflow: auto;
 }
 
 .highlight {
 	border: solid 2px white;
+	width:95%;
+	margin-left: 2.5%;
 }
 .hl_image {
-	
+
+}
+.hl_image img{
+	width:100%;
 }
 .photo_butt{
 	top: -42px;
