@@ -1,32 +1,83 @@
-<h1>Event#show</h1>
-<p>Find me in app/views/event/show.html.erb</p>
+<!-- event show page -->
 
-Event: <%= @event.event_name %> 
-<br>
-Description: <%= @event.event_description %> 
-<br>
-Location: <%= @event.event_location %> 
-<br>
-Number of Days: <%= @length %> 
-<br>
-Start Date: <%= @start %> 
-<br>
-End Date: <%= @end %> 
-<br>
-City: <%= @event.event_city %> 
-<br>
-State: <%= @event.event_state %> 
-<br>
+<!-- header -->
+<div class="grid-stack grid-stack-static grid-stack-6 top" style = "height:110px; margin-bottom:10px; z-index: 9999; background-color: rgba(255,255,255, 0.9);" >
 
+    <div class="grid-stack-item" 
+        data-gs-x="0" data-gs-y="0" 
+        data-gs-width="1" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content"></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="1" data-gs-y="0" 
+        data-gs-width="4" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content">
+                <div class="lg_top" style = "background-image: url(<%=asset_path 'logo.svg' %>)"></div>
+            </div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="6" data-gs-y="0" 
+        data-gs-width="1" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content"></div>
+    </div>
 
-<%=link_to "follow event", follow_event_path(@event) %>
+</div>
 
-event id: <%=@event.id %>
-<br>
-<% if current_user %>
+<!-- bottom -->
+<div class="grid-stack grid-stack-static grid-stack-6 bott" style = "height:100px; width: 95%; margin-left: 2.5%; position:fixed; bottom:0px; left:0px; right:0px; margin-bottom:0px; z-index: 9998; background-color: rgba(255,255,255, 0.9);-moz-border-radius-topleft: 10px;
+-webkit-border-top-left-radius: 10px;
+ border-top-left-radius: 10px;
+-moz-border-radius-topright: 10px;
+-webkit-border-top-right-radius: 10px;
+border-top-right-radius: 10px;" >
 
+    <div class="grid-stack-item" 
+        data-gs-x="0" data-gs-y="0" 
+        data-gs-width="2" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content">
+            	<div class="txt_bott" style = "background-image: url(<%=asset_path 'type_blue_ol.svg' %>)"></div>
+            </div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="2" data-gs-y="0" 
+        data-gs-width="2" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content">
+                <div>the latest the greatest the hottest</div>
+            </div>
+    </div>
 
+</div>
 
+<!-- profile header -->
+<div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
+   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my photos</div>
+    </div>
+    <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="2" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-color:white">
+            <div class="de_portbox">
+					<div class="de_eventname"><%= @event.event_name %></div>
+					<div class="de_portbody">
+						<%= @event.event_description %> 
+						<br>
+						where?  <%= @event.event_location %> 
+						<br>
+						how long?  <%= @length %> 
+						<br>
+						from . <%= @start %> 
+						<br>
+						till . <%= @end %> 
+						<br>
+						<%= @event.event_city %>, <%= @event.event_state %> 
+						<br><br>
+						<%=link_to "follow event", follow_event_path(@event),:class => 'de_subbutton' %>
+						<% if current_user %>
+						<% end %>
+					</div>
+				</div>
+            </div>
+    </div>
+</div>
 
 	<%= form_for @picture, :url => { :controller => "pictures", :action => "create" }, :html => {:method => :post} do |f| %>  
 	<br><br>
@@ -37,8 +88,3 @@ event id: <%=@event.id %>
 	<br><br> 
 	<div class="button"><%=f.submit :create %></div>
 	<% end %>
-
-
-
-
-<% end %>
