@@ -4,7 +4,7 @@
 
 <% @event.each do |x|%>
 
-<%=link_to x.event_name + " " + x.event_city + " " + x.event_state, event_path(x.id) %>
+<%=link_to x.event_name + " " + x.event_city + " " + x.event_state, event_path(x.id), method: :get %>
 <br>
 <br>
 <br>

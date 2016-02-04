@@ -29,7 +29,7 @@ before_filter :configure_account_update_params, only: [:update]
       end
     else
       clean_up_passwords resource
-      set_minimum_passw   ord_length
+      set_minimum_password_length
       respond_with resource
     end
   end

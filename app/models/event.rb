@@ -6,5 +6,6 @@ class Event < ActiveRecord::Base
 	has_many :event_followers
 
 	has_many :pictures
+	mount_uploader :logo, AvatarUploader
 
 end

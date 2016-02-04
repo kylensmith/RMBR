@@ -4,17 +4,18 @@ module ProfilesHelper
 	end
 
 
-	def follow_state(current_user, profile)
-		if UserFollower.where(user_id: current_user, user_being_followed_id: profile)
+	def follow_state(this_user, profile)
+		# puts "%%%%%%%%%%%%%% USER IS #{this_user.inspect} and PROFILE IS #{profile.inspect} %%%%%%%%%%%%%%%%%%%%%%"
+		# puts "%%%%%%%%%%%%%% USER STATUS #{this_user.user_being_followeds.include? profile} %%%%%%%%%%%%%%%%%%%%%%"
+		# uf = UserFollower.where(user_id: current_user, user_being_followed_id: profile)
+		if this_user.user_being_followeds.include? profile.user
+			# puts "THIS IS TRUE *************"
+			follow_record = this_user.user_followers.where(user_being_followed_id: profile.user.id).first
+			# puts "THIS IS STATUS ************* #{follow_record.follow_status}"
 
-			@user = UserFollower.where(user_id: current_user, user_being_followed_id: profile)
-			@user_id = @user.pluck(:id)
-			@status = UserFollower.find_by_id(@user_id).follow_status
-			if @status == 0
-				:follow
-			else
-				:unfollow
-			end
+			return follow_record.show_status
+		else
+			return "Follow"
 		end
-	end
+	end	
 end

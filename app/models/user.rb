@@ -13,4 +13,9 @@ class User < ActiveRecord::Base
 	has_many :followed_events, through: :event_followers, source: :event
 	has_many :event_followers
 	has_one :profile
+
+	has_many :user_being_followeds, through: :user_followers
+	has_many :user_followers
+
+
 end

@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
 
     @userfollower = UserFollower.new
   	@profile = Profile.find(params[:id])
+    @user =User.find(@profile.user_id)
   	@fname = Profile.find(params[:id]).fname
   	@lname = Profile.find(params[:id]).lname
   	@bio = Profile.find(params[:id]).bio
@@ -25,6 +26,20 @@ class ProfilesController < ApplicationController
       @id = current_user.id
       end
       # @image = @profile.avatar.current_path
+      puts "*****************"
+      puts @user.user_being_followeds.last
+      puts "*****************"
+      # @user.user_being_followeds.all.each do |follower|
+      #   puts "*****************"
+      #   puts "*******Data**********"
+
+      #   puts follower.profile.hometown_city
+
+      # end
+
+
+
+
   end
 
   def edit

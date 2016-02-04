@@ -5,6 +5,9 @@ def create
         # @event.id.push EventUser.create(user_id: current_user.id)
     if @event.save
     current_user.events << @event 
+     @event.update(pic)
+        @event.logo = pic[:logo]
+        @event.save
       flash[:notice] = "Your event has been created."
       redirect_to events_path
     else
@@ -33,8 +36,9 @@ def create
   	if current_user
   		@id = current_user.id
   	end
-  	@picture = Picture.new
   	@event = Event.find_by_id(params[:id])
+  	@image = @event.pictures
+  	@picture = Picture.new
   	@start = Event.find_by_id(params[:id]).event_start_date
   	@end = Event.find_by_id(params[:id]).event_end_date
   	@d = @end - @start
@@ -53,6 +57,9 @@ private
 
 def strong_form
     params.require(:event).permit(:event_name, :event_location, :event_city, :event_state, :event_description, :event_start_date, :event_end_date, :logo, :event_status)
+  end
+  def pic
+    params.require(:event).permit(:logo)
   end
 def event_id
     params.require(:event).permit(:id)
