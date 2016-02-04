@@ -11,10 +11,27 @@
 <div class="grid-stack grid-stack-static grid-stack-6 top" style = "height:110px; margin-bottom:10px; z-index: 9999; background-color: rgba(255,255,255, 0.9);" >
 
     <div class="grid-stack-item" 
-        data-gs-x="0" data-gs-y="0" 
-        data-gs-width="1" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content"></div>
+    data-gs-x="0" data-gs-y="0" 
+    data-gs-width="1" data-gs-height="1" id="default">
+    <div class="grid-stack-item-content">
+        <% if current_user %>
+        <div class="portdisplay">
+
+            <%= link_to("Events", events_path, method: :get, style: "text-decoration:none")%>
+            <br>
+            <%= link_to("Pictures", pictures_path, method: :get, style: "text-decoration:none")%>
+        </div>
+        <%else%>
+        <div class="portdisplay"> Welcome.
+
+        </div>
+
+
+
+        <%end%>
+
     </div>
+</div>
     <div class="grid-stack-item" 
         data-gs-x="1" data-gs-y="0" 
         data-gs-width="4" data-gs-height="1" id="default">
@@ -23,11 +40,28 @@
             </div>
     </div>
     <div class="grid-stack-item" 
-        data-gs-x="6" data-gs-y="0" 
-        data-gs-width="1" data-gs-height="1" id="default">
-            <div class="grid-stack-item-content">
-                <div class="portdisplay"> <%= link_to("#{current_user.profile.fname}'s Profile", profile_path(current_user.profile), method: :get)%></div>
-                <div class="portdisplay"> <%= link_to("Sign-out", destroy_user_session_path, method: :delete)%></div>
+    data-gs-x="6" data-gs-y="0" 
+    data-gs-width="1" data-gs-height="1" id="default">
+    <div class="grid-stack-item-content">
+        <div class="portdisplay"> 
+            <% if current_user %>
+
+            <%= link_to("Profile", profile_path(current_user.profile), method: :get, style: "text-decoration:none")%></div>
+            <br>
+            <div class="portdisplay"> <%= link_to("Sign-out", destroy_user_session_path, method: :delete, style: "text-decoration:none")%>
+                <%else%>
+
+                <%= link_to("Sign-in", new_user_session_path, method: :get, style: "text-decoration:none")%></div>
+            <br>
+            <div class="portdisplay"> <%= link_to("Sign-up", new_user_registration_path, method: :get, style: "text-decoration:none")%>
+
+
+
+
+
+                <%end%>
+
+            </div>
 
 
         </div>
@@ -59,6 +93,11 @@ border-top-right-radius: 10px;" >
 
 </div>
 <%= yield %>
+<div class="lightbox-outer">
+    <div class="lightbox-inner">
+    <div class="close">close</div>
+    </div>
+</div>
 
 </body>
 </html>
