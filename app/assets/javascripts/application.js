@@ -142,3 +142,17 @@ $('.grid-stack-item').resize( function () {
 $(document).ready(function(){
     $(".top").sticky({topSpacing:0});
   });
+
+$(document).ready(function(){
+    $(".lightbox-inner").on("click",'.close', function(){
+        $('.lightbox-inner').html('<div class="close">close</div>');
+        $('.lightbox-outer').hide();
+    });
+  });
+
+$(document).ready(function(){
+    var imgwidth = $(".img_display").width()
+    imgwidth -= 100
+    imgwidth = imgwidth.toString() + "px"
+    $('.photo_butt').css("left", imgwidth);
+  });
