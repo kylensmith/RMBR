@@ -10,6 +10,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
+
+    @userfollower = UserFollower.new
   	@profile = Profile.find(params[:id])
   	@fname = Profile.find(params[:id]).fname
   	@lname = Profile.find(params[:id]).lname
@@ -32,9 +34,6 @@ class ProfilesController < ApplicationController
   end
 
    def update
-    puts "PARAMMSSMSMSMSMSMSMSMSM"
-    puts profile_update
-    puts '*************'
     @profile = Profile.find_by_id(params[:id])
       if @profile.update(profile_update)
         @profile.avatar = profile_update[:avatar]

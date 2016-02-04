@@ -1,6 +1,5 @@
 module SnapsHelper
 	def snap_count(picture)
-		puts "PICTUREEEEEEEEEE IS: #{picture}"
 	 Snap.where(picture_id: picture.to_i).count
 	end
 

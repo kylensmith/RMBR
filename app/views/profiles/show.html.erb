@@ -155,6 +155,27 @@ THIS USER IS SESSION <%if current_user = @session%> <%= link_to "Settings", edit
 
 <%=link_to "update profile information", edit_profile_path(@profile.id) %>
 
+
+
+<!-- This is for following the user -->
+
+<% if current_user%>
+<%= form_for @userfollower, :url => { :controller => "user_followers", :action => "create" }, :html => {:method => :post} do |f| %>  
+	<br><br>
+	<%=f.hidden_field :user_being_followed_id, :value => @profile.id%>
+	<%=f.hidden_field :user_id, :value => @id%>
+	<br><br> 
+	<div class="button"><%=f.submit follow_state(@id, @profile.id) %></div>
+	<% end %> 
+	<% end %> 
+	
+
+
+
+
+
+
+
 <br>
 <br><br>
 <br><br>
