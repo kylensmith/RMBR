@@ -5,9 +5,11 @@
    
    
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
-            <%=link_to populate_path(id: @event.pictures[0].id), class: "grid-stack-item-content", remote: true do %>
- 					<%= image_tag @event.pictures[0].picture_file.url, {style: "max-width:100%; margin-top: -50%;"} %>
-            	      <%end%>  
+
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(<%=@event.pictures[0].picture_file.url%>)">
+                <%=@event.event_name%></div>
+            <%=link_to "Open", populate_path(id: @event.pictures[0].id), remote: true, class: "pop" %> 
+	
 
     </div>
     
