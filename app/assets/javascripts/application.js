@@ -123,13 +123,9 @@ $(function () {
 
 $(document).ready (function(){
 $('.grid-stack-item').resize( function () {
-	console.log ('hello');
 	var height = $(this).height();
-	console.log (height);
 	var width = $(this).width();
-	console.log (width);
-	var showWidth = $(window).width() / 6 + 5;
-	console.log (showWidth);
+	var showWidth = $('body').width() / 6 + 5;
 	if (height >= 205 && width >= showWidth){
 		$(this).find(".etitle,.elocdate").show();
 	}
@@ -148,10 +144,10 @@ $(document).ready(function(){
         $('.lightbox-inner').html('<div class="close">close</div>');
         $('.lightbox-outer').hide();
     });
-    $(".lightbox-outer").on("click", function(){
-        $('.lightbox-inner').html('<div class="close">close</div>');
-        $('.lightbox-outer').hide();
-    });
+    // $(".lightbox-outer").on("click", function(){
+    //     $('.lightbox-inner').html('<div class="close">close</div>');
+    //     $('.lightbox-outer').hide();
+    // });
   });
 
 $(document).ready(function(){
@@ -159,4 +155,10 @@ $(document).ready(function(){
     imgwidth -= 100
     imgwidth = imgwidth.toString() + "px"
     $('.photo_butt').css("left", imgwidth);
+  });
+
+$(document).ready(function(){
+    $('.grid-stack-item-content').off().on('click',function(){
+        $(this).next().trigger('click');
+    });
   });

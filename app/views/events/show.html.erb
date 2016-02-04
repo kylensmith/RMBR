@@ -3,7 +3,10 @@
 <!-- profile header -->
 <div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
-            <div class="grid-stack-item-content" style = "background-color:#32b5ff"><%= link_to image_tag(@event.pictures.last.picture_file.url), populate_path(id: @event.pictures.last.id), remote: true %></a></div>
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(<%=@event.pictures[0].picture_file.url%>)">
+                <%=@event.event_name%></div>
+            <%=link_to "Open", populate_path(id: @event.pictures[0].id), remote: true, class: "pop" %> 
+	
     </div>
     <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="2" data-gs-height="2">
             <div class="grid-stack-item-content" style = "background-color:white">
