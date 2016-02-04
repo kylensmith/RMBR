@@ -44,7 +44,12 @@
 <div class="grid-stack grid-stack-6 second" style = "margin-top:10px" >
 
 	<%i=0%><%x=0%>
-	<% 25.times do%>
+
+	<!-- This is for demoing when there are not many images -->
+	<% 3.times do%>
+	<!-- remove on deployment -->
+	
+
 	<% @image.all.reverse.each do |a| %>
 
 	<div class="grid-stack-item" data-gs-max-width="3" data-gs-max-height="2" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
