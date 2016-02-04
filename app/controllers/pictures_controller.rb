@@ -25,6 +25,15 @@ end
 def flash_count
 	Flash.where(picture_id: @picture.id).count
 end
+def populate
+	@comment = Comment.new
+	@flash = Flash.new
+	@snap = Snap.new
+	@picture = Picture.find_by_id(params[:id])
+	if current_user
+		@id = current_user.id
+	end
+end
 
 
 

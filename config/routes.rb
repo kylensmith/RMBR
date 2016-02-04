@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       }
     end
 
-
+  get '/populate' => 'pictures#populate'
   get 'profile/create'
 
   get 'profile/new'
