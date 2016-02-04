@@ -5,7 +5,7 @@
 Event <%= link_to pic_event.event_name, event_path(pic_event)%> 
 <br>
 <!-- Displays the person that posted the image -->
-<%= link_to pic_profile.fname, profile_path(pic_profile)%>
+<%= link_to pic_profile.fname, profile_path(pic_profile) if pic_profile%>
  <%=@picture.created_at.strftime("%b %d, %Y (%l:%M %P)")%> 
  
 
