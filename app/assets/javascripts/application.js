@@ -158,7 +158,7 @@ $(document).ready(function(){
   });
 
 $(document).ready(function(){
-    $('.grid-stack-item-content').off().on('click',function(){
+    $('.grid-stack-item-content').off().on('dblclick',function(){
         $(this).next().trigger('click');
     });
   });

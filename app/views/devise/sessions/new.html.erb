@@ -3,7 +3,7 @@
     <div class="grid-stack-item"
         data-gs-x="0" data-gs-y="0" 
         data-gs-width="3" data-gs-height="2">
-            <div class="grid-stack-item-content" style = "background-image: url(<%=asset_path 'phototest.jpg' %>)"><div class="main_elocdate">event location<br>event date</div><div class="main_etitle">event title here</div><div class="clear"></div></div>
+            <div class="grid-stack-item-content" style = "background-image: url(<%=asset_path 'phototest.jpg' %>)"><div class="main_elocdate">philadelphia, pa<br>january 28</div><div class="main_etitle">the philly auto show</div><div class="clear"></div></div>
     </div>
     <div class="grid-stack-item" 
         data-gs-x="3" data-gs-y="0" 
@@ -65,6 +65,8 @@
       <!-- This is the picture looping -->
 
             <div class="grid-stack-item-content" style = "background-color:orange; background-image: url(<%=a.picture_file.url%>)" > 
+              <div class="eatitle"><%=link_to Event.find(a.event_id).event_name, event_path(Event.find(a.event_id)), method: :get%>
+              </div>
               <div class="elocdate"><%=link_to Event.find(a.event_id).event_name, profile_path(Event.find(a.event_id)), method: :get%>
               </div>
               <div class="etitle"><%=a.description%><br><%=a.created_at%>

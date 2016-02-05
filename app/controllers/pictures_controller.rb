@@ -35,6 +35,9 @@ def populate
 	if current_user
 		@id = current_user.id
 	end
+	def who_said(comment)
+		Profile.find_by_user_id(comment)
+	end
 end
 
 

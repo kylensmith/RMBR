@@ -50,6 +50,17 @@ $(document).ready (function(){
 		x+='<div class="comm_button"><%=f.submit :comment %></div>'
 		x+='</div>'
 		x+='<% end %>'
+		x+='<%@picture_comments.all.each do |comment| %>'
+		x+='<div class="comm_show">'
+		x+='<div class="comm_info">'
+		x+='<%=who_said(comment.user_id).fname[0] %> <%=who_said(comment.user_id).lname %>&nbsp;&nbsp;&nbsp;&nbsp;<%=comment.created_at.strftime("%b %d, %Y")%>'
+		x+='</div>'
+		x+='<br>'
+		x+='<div class="comm_cont">'
+		x+='<%=comment.comment_text %>'
+		x+='</div>'
+		x+='</div>'
+		x+='<%end%>'
 
 	$('.lightbox-outer').show();
 	$('.lightbox-inner').append(x);

@@ -9,7 +9,7 @@
 			<% Picture.all.each do |w|%> 
 
 		<!-- This is the code for making an image a link to the picture show page with the proper ID -->
-			<%= link_to (image_tag(w.picture_file.url)), picture_path(w.id)%>
+			<%= image_tag(w.picture_file.url)%><%=link_to "Open", populate_path(id: @event.pictures[0].id), remote: true, class: "pop" %> 
 			
 
 			<br><br>
