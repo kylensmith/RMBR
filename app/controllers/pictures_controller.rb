@@ -3,6 +3,7 @@ class PicturesController < ApplicationController
 		puts "******&&&&&******&&&&*******"
 		@asset = Picture.new(asset_params)
 		@asset.save
+		current_user.pictures << @asset
 	# session[:return_to] ||= request.referer
 	redirect_to request.referer
 

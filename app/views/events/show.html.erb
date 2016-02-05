@@ -3,12 +3,19 @@
 <!-- profile header -->
 <div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
    
-   
+   <%if @event.pictures[0]%>
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
 
+           
+
             <div class="grid-stack-item-content" style = "background-color:#32b5ff background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(<%=@event.pictures[0].picture_file.url%>)">
+            
                 <%=@event.event_name%></div>
             <%=link_to "Open", populate_path(id: @event.pictures[0].id), remote: true, class: "pop" %> 
+            <%else%>
+             <div class="grid-stack-item-content" style = "background-color:#32b5ff background-size: cover; background-repeat: no-repeat; background-position: center">
+       
+            <%end%>
 	
 
     </div>
@@ -40,6 +47,8 @@
 </div>
 	<%= form_for @picture, :url => { :controller => "pictures", :action => "create" }, :html => {:method => :post} do |f| %>  
 	<br><br>
+	<%=f.label :Picture_Description %> 
+	<%=f.text_field :description%>
 	<%=f.label :Picture_file %> 
 	<%=f.file_field :picture_file %>
 	<%=f.hidden_field :event_id, :value => @event.id%>
@@ -62,6 +71,7 @@
 
 	<div class="grid-stack-item" data-gs-max-width="3" data-gs-max-height="2" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
 		<div class="grid-stack-item-content" style = "background-color:orange; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(<%=a.picture_file.url%>)"></div>
+		<%=link_to "Open", populate_path(id: a.id), remote: true, class: "pop" %> 
 	</div>
 
 
@@ -69,15 +79,7 @@
 	<%end%>
 	<%end%>
 
-
-
-
-
 </div>
-
-
-
-
 
 </div> 
 
