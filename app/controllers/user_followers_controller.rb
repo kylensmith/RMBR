@@ -5,9 +5,7 @@ class UserFollowersController < ApplicationController
 			if UserFollower.exists?(follow)
 				@user = UserFollower.where(follow)
 				@user_id = @user.pluck(:id)
-				puts "*****************"
 				puts UserFollower.find_by_id(@user_id).follow_status
-				puts "*****************"
 				@status = UserFollower.find_by_id(@user_id).follow_status
 				if @status == 0
 					UserFollower.find_by_id(@user_id).update(follow_status: 1)

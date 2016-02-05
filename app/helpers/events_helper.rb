@@ -61,6 +61,14 @@ def us_states
 	      ['Public', 0],
 	      ['Private', 1]
 	]
-	end              
+	end 
+# record = EventFollower.where(user_id: current_user.id)
+# user = current_user
+
+	def event_check(record) 
+			user_event = Event.find_by_id(record.event_id)
+			return user_event
+		end          
+	
 
 end

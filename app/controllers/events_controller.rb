@@ -21,16 +21,34 @@ def create
   end
 
   def index
+
   	@event = Event.all
+  	if current_user
+  		@your_events = EventFollower.where(user_id: current_user.id)
   end
+end
 
   def follow
   	@e = Event.find_by_id(params[:id])
   	if @e
-  		current_user.followed_events << @e
+
+  		if current_user.followed_events.include? @e
+  			@record = EventFollower.where(user_id: current_user.id, event_id: @e).first
+  			puts "******************"
+  			if @record.follow_status != 0
+
+  			@record.update(follow_status: 0)
+  			else 
+  			@record.update(follow_status: 1)
+  			end
+  		else
+  			current_user.followed_events << @e
+  		end
 	 end
-  	redirect_to events_path, notice: "cool"
-  end
+	 redirect_to events_path
+	 end
+  	 
+
 
   def show
   	if current_user

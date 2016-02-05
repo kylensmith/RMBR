@@ -8,7 +8,7 @@
 <!-- profile header -->
 <div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my photos</div>
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff"><%=link_to "Create a new event", new_event_path, method: :get %></div>
     </div>
     <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="2" data-gs-height="1">
             <div class="grid-stack-item-content" style = "background-color:#32b5ff">my events</div>
@@ -61,7 +61,7 @@
 <!-- following -->
 <div class="grid-stack grid-stack-static grid-stack-12 profile_follow_body" style = "height:85px; margin-bottom:10px" >
 	<%z=0%>
-	<% 13.times do%>
+
 	<%@user.user_being_followeds.all.each do |follower| %>
 
    <div class="grid-stack-item" data-gs-x="<%=z%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
@@ -73,7 +73,7 @@
     </div>
     
 <%z= z >=12 ? 0 : z+=1%>
-    <%end%><%end%>
+    <%end%>
 </div>
 
 
@@ -91,7 +91,7 @@
 
 <div class="grid-stack grid-stack-static grid-stack-6 profile_head" style = "height:170px; margin-bottom:10px" >
    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:#32b5ff">my photos</div>
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff"><%=link_to "Create a new event", new_event_path, method: :get %></div>
     </div>
     <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="2" data-gs-height="1">
             <div class="grid-stack-item-content" style = "background-color:#32b5ff">my events</div>
@@ -151,41 +151,15 @@
     </div>
 </div>
 
-<!-- following -->
-<div class="grid-stack grid-stack-6 second" style = "margin-top:10px" >
-    <div class="grid-stack-item" data-gs-max-width="3" data-gs-max-height="2" data-gs-x="0" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:orange;"></div>
-    </div>
-    <div class="grid-stack-item" data-gs-x="1" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:orange;"></div>
-    </div>
-    <div class="grid-stack-item" data-gs-x="2" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:orange;"></div>
-    </div>
-    <div class="grid-stack-item" data-gs-x="3" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:orange;"></div>
-    </div>
-    <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:orange;"></div>
-    </div>
-    <div class="grid-stack-item" data-gs-x="5" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:orange;"></div>
-    </div>
-
-
-
-
-
-
 
 
 
 	<%z=0%>
-	<% 13.times do%>
+	
 	<%@user.user_being_followeds.all.each do |follower| %>
 
    <div class="grid-stack-item" data-gs-x="<%=z%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content" style = "background-color:#32b5ff; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(<%=follower.profile.avatar.url%>)">
+            <div class="grid-stack-item-content" style = "background-color:orange; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(<%=follower.profile.avatar.url%>)">
 
             	<%=link_to follower.profile.fname, profile_path(follower.profile.id), method: :get %>
 
@@ -197,35 +171,8 @@
 </div>
 
 
-<% end %>
-
-<%= link_to("Sign-out", destroy_user_session_path, method: :delete)%>
 
 
-
-<br>
-
-<%=link_to "update user information", edit_user_path(@profile.user.id), method: :get %>
-
-
-<%=link_to "update profile information", edit_profile_path(@profile.id), method: :get %>
-
-
-
-<!-- This is for following the user -->
-
-
-	
-
-
-
-THIS USER IS SESSION <%=@session%>
-
-<br><br>
-THIS USER IS SESSION <%if current_user = @session%> <%= link_to "Settings", edit_user_path(current_user) %><%end%>
-<br><br>
-
-<%=current_user%>
 
 
 <br>

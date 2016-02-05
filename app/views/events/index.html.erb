@@ -2,14 +2,90 @@
 <p>Find me in app/views/event/index.html.erb</p>
 
 
-<% @event.each do |x|%>
 
-<%=link_to x.event_name + " " + x.event_city + " " + x.event_state, event_path(x.id), method: :get %>
+
+
 <br>
 <br>
 <br>
 <br>
 <br>
 
+<% if current_user %>
+
+<div class="grid-stack grid-stack-6 second" style = "margin-top:10px" >
+<%counter = 0%>
+	<% 4.times do%>
+<%i=0%>
+<% @your_events.all.shuffle.each do |record|%>
+<%if record.follow_status != 0 %>
+ <%if event_check(record).pictures[0]%>
+ <div class="grid-stack-item" data-gs-max-width="5" data-gs-max-height="5" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="2" data-gs-height="2">
+ 	
+            <div class="grid-stack-item-content" style = "background-color:orange; background-image: url(<%=event_check(record).pictures[0].picture_file.url%>)" ><div class="elocdate"><%=event_check(record).event_location%><br><%=event_check(record).pictures[0].created_at.strftime("%b %d, %Y (%l:%M %P)")%></div><div class="etitle"><%=event_check(record).event_description%></div><div class="clear"></div></div>
+            <%=link_to "Open", populate_path(id: event_check(record).id), remote: true, class: "pop" %> 
+    </div>
+    <%else%>
+    <div class="grid-stack-item" data-gs-max-width="5" data-gs-max-height="5" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+     <div class="grid-stack-item-content" style = "background-color:orange" ><div class="elocdate"><%=event_check(record).event_location%><br><%=event_check(record).event_start_date.strftime("%b %d, %Y")%></div><div class="etitle"><%=event_check(record).event_description%></div><div class="clear"></div></div>
+            <%=link_to "Open", populate_path(id: event_check(record).id), remote: true, class: "pop" %> 
+    </div>
+<%end%>
+<%i= i >=5 ? 0 : i+=2%>
+<%counter+=1%>
+<%end%>
 
 <%end%>
+<%end%>
+<%end%>
+
+<% @event.take(50-counter.to_i).each do |event|%>
+<%i=0%>
+ <%if event.pictures[0]%>
+ <div class="grid-stack-item" data-gs-max-width="5" data-gs-max-height="5" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="2" data-gs-height="2">
+ 	
+            <div class="grid-stack-item-content" style = "background-color:#32b5ff; background-image: url(<%=event.pictures[0].picture_file.url%>)" ><div class="elocdate"><%=event.event_location%><br><%=event.pictures[0].created_at.strftime("%b %d, %Y (%l:%M %P)")%></div><div class="etitle"><%=event.event_description%></div><div class="clear"></div></div>
+            <%=link_to "Open", populate_path(id: event.id), remote: true, class: "pop" %>  
+    </div>
+    <%else%>
+    <div class="grid-stack-item" data-gs-max-width="5" data-gs-max-height="5" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+     <div class="grid-stack-item-content" style = "background-color:#32b5ff" ><div class="elocdate"><%=event.event_location%></div><div class="etitle"><%=event.event_description%></div><div class="clear"></div></div>
+            <%=link_to "Open", populate_path(id: event.id), remote: true, class: "pop" %> 
+           
+    </div>
+<%end%>
+<%i= i >=5 ? 0 : i+=2%>
+<%end%>
+
+
+
+
+
+
+
+   
+   
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+

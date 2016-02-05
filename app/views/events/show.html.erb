@@ -14,6 +14,7 @@
             <%=link_to "Open", populate_path(id: @event.pictures[0].id), remote: true, class: "pop" %> 
             <%else%>
              <div class="grid-stack-item-content" style = "background-color:#32b5ff background-size: cover; background-repeat: no-repeat; background-position: center">
+
        
             <%end%>
 	
@@ -46,15 +47,16 @@
     </div>
 </div>
 	<%= form_for @picture, :url => { :controller => "pictures", :action => "create" }, :html => {:method => :post} do |f| %>  
-	<br><br>
-	<%=f.label :Picture_Description %> 
-	<%=f.text_field :description%>
+	
+	
 	<%=f.label :Picture_file %> 
 	<%=f.file_field :picture_file %>
+	<%=f.label :Picture_Description %> 
+	<%=f.text_field :description%>
 	<%=f.hidden_field :event_id, :value => @event.id%>
 	<%=f.hidden_field :user_id, :value => @id%>
-	<br><br> 
-	<div class="button"><%=f.submit "Post picture" %></div>
+	
+	<span class="button"><%=f.submit "Post picture" %></span>
 	<% end %>
 
 <!-- display photos of event -->
@@ -63,7 +65,7 @@
 	<%i=0%><%x=0%>
 
 	<!-- This is for demoing when there are not many images -->
-	<% 3.times do%>
+	
 	<!-- remove on deployment -->
 	
 
@@ -77,7 +79,7 @@
 
 	<%i= i >=5 ? 0 : i+=1%>
 	<%end%>
-	<%end%>
+	
 
 </div>
 
