@@ -14,6 +14,8 @@ def show
 	@flash = Flash.new
 	@snap = Snap.new
 	@picture = Picture.find_by_id(params[:id])
+	@picture_comments = Picture.find(@picture).comments
+	
 	if current_user
 		@id = current_user.id
 	end
