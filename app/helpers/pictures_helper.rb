@@ -7,6 +7,10 @@ module PicturesHelper
 	def pic_event
 	 Event.find_by_id(@picture.event_id)
 	end
+	def who_said(comment)
+		Profile.find_by_user_id(comment)
+	end
+
 
 
 end

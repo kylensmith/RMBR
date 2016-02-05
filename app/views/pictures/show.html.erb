@@ -52,6 +52,16 @@ Event <%= link_to pic_event.event_name, event_path(pic_event), method: :get%>
 
 
 
+<%@picture_comments.all.each do |comment| %>
+<%=who_said(comment.user_id).fname[0]. %> <%=who_said(comment.user_id).lname. %>
+<br>
+<%=comment.comment_text %>
+<%=comment.created_at %>
+<%end%>
+
+
+
+
 
 
 
