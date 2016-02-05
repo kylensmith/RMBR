@@ -222,11 +222,12 @@ body {
 }
 .mod_event {
 	font-family: Quicksand;
-	font-weight: 400;
+	font-weight: 700;
 	font-size: 0.9em;
 	color:#32b5ff;
 	margin-left: 30px;
 	float: left;
+	text-transform: uppercase;
 }
 .mod_event a:link{
 	text-decoration: none;
@@ -237,7 +238,7 @@ body {
 	color:#32b5ff;
  }
 
- .mod_user {
+.mod_user {
 	font-family: Quicksand;
 	font-weight: 400;
 	font-size: 0.9em;
@@ -286,4 +287,13 @@ body {
 	margin-bottom: 10px;
     padding:5px 8px;
     width: 450px;
+}
+ .mod_date {
+	font-family: Quicksand;
+	font-weight: 400;
+	font-size: 0.8em;
+	color:#32b5ff;
+	margin-top: 10px;
+	margin-left: 30px;
+	float: left;
 }
