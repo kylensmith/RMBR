@@ -1,34 +1,6 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
 
 
+<!-- main body -->
 <div class="grid-stack grid-stack-static grid-stack-6 main" style = "height:340px" >
     <div class="grid-stack-item"
         data-gs-x="0" data-gs-y="0" 
@@ -37,19 +9,47 @@
     </div>
     <div class="grid-stack-item" 
         data-gs-x="3" data-gs-y="0" 
-        data-gs-width="2" data-gs-height="1">
-            <div class="grid-stack-item-content"></div>
+        data-gs-width="1" data-gs-height="2">
+            <div class="grid-stack-item-content">
+            <div class="subox">
+              <h2>sign up!</h2>
+
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+
+                  <div class="field">
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, autofocus: true, :class => 'suform' %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :password %>
+                    <% if @minimum_password_length %>
+                    <% end %><br />
+                    <%= f.password_field :password,:placeholder => "8 characters minimum", autocomplete: "off", :class => 'suform' %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'suform' %>
+                  </div>
+
+                  <div class="actions">
+                    <%= f.submit "join", :class => 'su_subbutton' %>
+                  </div>
+                <% end %>
+
+                <%= render "users/shared/links" %>
+            </div>
+            </div>
     </div>
     <div class="grid-stack-item" 
         data-gs-x="5" data-gs-y="0" 
         data-gs-width="1" data-gs-height="1" id="default">
             <div class="grid-stack-item-content"></div>
     </div>
-    <div class="grid-stack-item" 
-        data-gs-x="3" data-gs-y="1" 
-        data-gs-width="1" data-gs-height="1">
-            <div class="grid-stack-item-content"></div>
-    </div>
+
+    <!-- row 2 -->
     <div class="grid-stack-item" 
         data-gs-x="4" data-gs-y="1" 
         data-gs-width="2" data-gs-height="1">
@@ -80,3 +80,6 @@
             <div class="grid-stack-item-content" style = "background-color:orange;background-image: url(<%=asset_path 'phototest.jpg' %>)"></div>
     </div>
 </div>
+
+
+
