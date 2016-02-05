@@ -24,3 +24,95 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+
+
+
+
+<div class="grid-stack grid-stack-static grid-stack-6 main" style = "height:340px" >
+    <div class="grid-stack-item"
+        data-gs-x="0" data-gs-y="0" 
+        data-gs-width="3" data-gs-height="2">
+            <div class="grid-stack-item-content" style = "background-image: url(<%=asset_path 'phototest.jpg' %>)"><div class="main_elocdate">philadelphia, pa<br>january 28</div><div class="main_etitle">the philly auto show</div><div class="clear"></div></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="3" data-gs-y="0" 
+        data-gs-width="1" data-gs-height="2">
+        <div class="grid-stack-item-content">
+        <div class="subox">
+        <h2>want to rmbr?</h2>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, :class => 'suform' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", :class => 'suform' %>
+          </div>
+            <div class="actions">
+            <%= f.submit "sign in", :class => 'su_subbutton', method: :get %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :RMBR_me %>
+          </div>
+          <% end -%>
+          <% end %>
+            <br>
+          <%= render "devise/shared/links" %>
+        </div>
+        </div>
+      </div>
+    <div class="grid-stack-item" 
+        data-gs-x="4" data-gs-y="0" 
+        data-gs-width="2" data-gs-height="1" id="default">
+            <div class="grid-stack-item-content"><div class ="links"><div class="home_links">the latest &nbsp;&nbsp;&nbsp;the greatest &nbsp;&nbsp;&nbsp;the hottest</div></div></div>
+    </div>
+    <div class="grid-stack-item" 
+        data-gs-x="4" data-gs-y="1" 
+        data-gs-width="2" data-gs-height="1">
+            <div class="grid-stack-item-content">
+                <div class="lt_home" style = "background-image: url(<%=asset_path 'type_blue_ol.svg' %>)"></div>
+            </div>
+    </div>
+</div>
+
+
+<div class="grid-stack grid-stack-6 second" style = "margin-top:10px" >
+
+<!-- Note: Tables data calls are in view to expedite proof of concept presentation.  In deployment, the controllers should be generated to hide from view. -->
+<%i=0%>
+<% 3.times do%>
+<% Picture.all.shuffle.last(48).reverse.each do |a| %>
+
+    <div class="grid-stack-item" data-gs-max-width="4" data-gs-max-height="4" data-gs-x="<%=i%>" data-gs-y="0" data-gs-width="1" data-gs-height="1">
+
+    
+      <!-- This is the picture looping -->
+
+            <div class="grid-stack-item-content" style = "background-color:orange; background-image: url(<%=a.picture_file.url%>)" > 
+              <div class="eatitle"><%=link_to Event.find(a.event_id).event_name, event_path(Event.find(a.event_id)), method: :get%>
+              </div>
+              <div class="elocdate"><%=link_to Event.find(a.event_id).event_name, profile_path(Event.find(a.event_id)), method: :get%>
+              </div>
+              <div class="etitle"><%=a.description%><br><%=a.created_at%>
+              </div>
+              <div class="clear">
+                
+              </div>
+              </div> <%=link_to "Open", populate_path(id: a.id), remote: true, class: "pop" %>
+            </div>
+              <%i= i >=5 ? 0 : i+=1%>
+          <%end%>
+          <%end%>
+
+        </div> 
+
+<br><br><br><br><br><br><br><br><br>
+
+            
+
+

@@ -106,6 +106,17 @@
                         My Current City &amp; State : <div class="portdisplay"> <%= @current_city%></div> <div class="portdisplay"> <%= @current_state %></div>
                         <br>
                         Member Since : <div class="portdisplay"> <%= @member_since.strftime("%b %d, %Y") %></div>
+                        <!-- Checks to see if it is accessed as a logged in user, is so, the user can follow -->
+					<% if current_user%>
+					<%= form_for @userfollower, :url => { :controller => "user_followers", :action => "create" }, :html => {:method => :post} do |f| %>  
+					<div class="button"><%=f.submit follow_state(current_user, @profile) %></div>
+					<br><br>
+					<%=f.hidden_field :user_being_followed_id, :value => @profile.id%>
+					<%=f.hidden_field :user_id, :value => @id%>
+					<br><br> 
+
+					<% end %> 
+					<% end %>
                         <br><br>
                     </div>
                 </div>
