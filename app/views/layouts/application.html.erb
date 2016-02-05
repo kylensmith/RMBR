@@ -15,19 +15,13 @@
     data-gs-width="1" data-gs-height="1" id="default">
     <div class="grid-stack-item-content">
         <% if current_user %>
-        <div class="portdisplay">
+        <div class="top_sisu">
 
-            <%= link_to("Events", events_path, method: :get, style: "text-decoration:none")%>
-            <br>
+            <%= link_to("Events", events_path, method: :get)%>&nbsp;&nbsp;
             <%= link_to("Pictures", pictures_path, method: :get, style: "text-decoration:none")%>
         </div>
         <%else%>
-        <div class="portdisplay"> Welcome.
-
-        </div>
-
-
-
+        <div class="top_sisu"> Welcome.</div>
         <%end%>
 
     </div>
@@ -36,38 +30,29 @@
         data-gs-x="1" data-gs-y="0" 
         data-gs-width="4" data-gs-height="1" id="default">
             <div class="grid-stack-item-content">
-                <div class="lg_top" style = "background-image: url(<%=asset_path 'logo.svg' %>)"></div>
+                <%= link_to root_path do %><div class="lg_top" style = "background-image: url(<%=asset_path 'logo.svg' %>)"></div><%end%>
             </div>
     </div>
     <div class="grid-stack-item" 
     data-gs-x="6" data-gs-y="0" 
     data-gs-width="1" data-gs-height="1" id="default">
     <div class="grid-stack-item-content">
-        <div class="portdisplay"> 
+        <div class="top_sisu top_home"> 
             <% if current_user %>
-
-            <%= link_to("Profile", profile_path(current_user.profile), method: :get, style: "text-decoration:none")%></div>
-            <br>
-            <div class="portdisplay"> <%= link_to("Sign-out", destroy_user_session_path, method: :delete, style: "text-decoration:none")%>
+            <%= link_to("Profile", profile_path(current_user.profile), method: :get)%>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to("Sign-out", destroy_user_session_path, method: :delete)%>
                 <%else%>
-
-                <%= link_to("Sign-in", new_user_session_path, method: :get, style: "text-decoration:none")%></div>
-            <br>
-            <div class="portdisplay"> <%= link_to("Sign-up", new_user_registration_path, method: :get, style: "text-decoration:none")%>
-
-
-
-
-
+                <%= link_to("Sign-in", new_user_session_path, method: :get)%>
+            &nbsp;&nbsp;
+            <%= link_to("Sign-up", new_user_registration_path, method: :get)%>
                 <%end%>
-
             </div>
-
-
         </div>
     </div>
-
 </div>
+
+
+
+
 <!-- bottom -->
 <div class="grid-stack grid-stack-static grid-stack-6 bott" style = "height:80px; width: 95%; margin-left: 2.5%; position:fixed; bottom:0px; left:0px; right:0px; margin-bottom:0px; z-index: 9998; background-color: rgba(255,255,255, 0.9);-moz-border-radius-topleft: 10px;
 -webkit-border-top-left-radius: 10px;
@@ -78,16 +63,16 @@ border-top-right-radius: 10px;" >
 
     <div class="grid-stack-item" 
         data-gs-x="0" data-gs-y="0" 
-        data-gs-width="2" data-gs-height="1" id="default">
+        data-gs-width="1" data-gs-height="1" id="default">
             <div class="grid-stack-item-content">
                 <div class="txt_bott" style = "background-image: url(<%=asset_path 'type_blue_ol.svg' %>)"></div>
             </div>
     </div>
     <div class="grid-stack-item" 
-        data-gs-x="2" data-gs-y="0" 
+        data-gs-x="1" data-gs-y="0" 
         data-gs-width="2" data-gs-height="1" id="default">
             <div class="grid-stack-item-content">
-                <div class="bott_links">the latest the greatest the hottest</div>
+                <div class="bott_links">the latest &nbsp;&nbsp;&nbsp;the greatest &nbsp;&nbsp;&nbsp;the hottest</div>
             </div>
     </div>
 

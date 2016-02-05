@@ -162,3 +162,18 @@ $(document).ready(function(){
         $(this).next().trigger('click');
     });
   });
+
+$(document).ready(function(){
+      if (window.location.pathname == "/users/sign_in"||window.location.pathname == "/users/sign_up") {
+            $('.bott').hide();
+      } else {
+            $('.bott').show();
+      }
+});
+$(document).ready(function(){
+      if (window.location.pathname == "/users/sign_in"||window.location.pathname == "/users/sign_up") {
+            $('.top_home').hide();
+      } else {
+            $('.top_home').show();
+      }
+});
